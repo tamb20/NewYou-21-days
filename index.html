@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تحدي ٢١ يومًا لبناء نسخة أفضل منك</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="pill">برنامج تفاعلي للفئة العمرية 13–25 سنة</span>
+        <h1>تحدي ٢١ يومًا لبناء نسخة أفضل منك</h1>
+        <p class="lead">
+          برنامج تطبيقي متوازن يساعدك على تطوير نفسك في أربعة جوانب:
+          <strong>الروحي، الرياضي، الفكري والثقافي، والاجتماعي</strong>.
+          تابع أدائك يومًا بيوم، واعرف نسبة الإنجاز لكل جانب، ثم احصل على شهادة اجتياز باسمك في نهاية الرحلة.
+        </p>
+        <div class="quote-card">
+          <p>﴿وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا﴾</p>
+        </div>
+        <div class="dua-box">
+          إن وجدت في هذا البرنامج نفعًا، فلا تنسَ أن تدعو في ظهر الغيب لصاحب الفكرة ومن ساهم في نشر الخير.
+        </div>
+
+        <section class="intro-video-card">
+          <div class="video-text">
+            <span class="video-label">شرح سريع للبرنامج</span>
+            <h2>كيف تبدأ التحدي؟</h2>
+            <p>
+              شاهد فيديو قصير يشرح فكرة البرنامج، طريقة متابعة الإنجاز اليومي،
+              وكيف تحصل على شهادة الاجتياز بعد ٢١ يومًا.
+            </p>
+          </div>
+          <video class="intro-video" controls playsinline poster="">
+            <source src="assets/intro-video.mp4" type="video/mp4" />
+            متصفحك لا يدعم تشغيل الفيديو. يمكنك رفع فيديو باسم intro-video.mp4 داخل مجلد assets.
+          </video>
+          <p class="video-note">
+            إذا لم يظهر الفيديو، تأكد من رفع ملف <strong>intro-video.mp4</strong> داخل مجلد <strong>assets</strong>.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="summary-card">
+        <label for="participantName">اسم المشارك</label>
+        <input id="participantName" type="text" placeholder="اكتب اسمك هنا ليظهر في الشهادة" />
+
+        <div class="main-progress-title">
+          <span>نسبة الإنجاز الكلية</span>
+          <strong id="overallPercentText">0%</strong>
+        </div>
+        <div class="progress"><div id="overallProgressBar"></div></div>
+
+        <div class="mini-stats">
+          <div><strong id="completedDays">0</strong><span>أيام بها إنجاز</span></div>
+          <div><strong id="completedTasks">0</strong><span>مهام مكتملة</span></div>
+        </div>
+
+        <div class="aspect-grid" id="aspectSummaryCards"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro-cards">
+      <div class="info-card spirit"><h3>الجانب الروحي</h3><p>بناء الصلة بالله والانضباط الداخلي والعودة السريعة عند التقصير.</p></div>
+      <div class="info-card sport"><h3>الجانب الرياضي</h3><p>تنشيط الجسد وبناء عادة صحية تحسن الطاقة والحيوية والانضباط.</p></div>
+      <div class="info-card mind"><h3>الجانب الفكري والثقافي</h3><p>توسيع المعرفة، القراءة، التعلم، وتحفيز التفكير والنمو العقلي.</p></div>
+      <div class="info-card social"><h3>الجانب الاجتماعي</h3><p>تحسين العلاقات، اللطف، احترام الآخرين، وبناء أثر إنساني جميل.</p></div>
+    </section>
+
+    <section class="workspace">
+      <aside class="days-panel">
+        <h2>اختر اليوم</h2>
+        <div id="daysGrid" class="days-grid"></div>
+        <button id="resetBtn" class="btn outline full">إعادة البرنامج</button>
+      </aside>
+
+      <section class="daily-panel">
+        <div class="daily-header">
+          <div>
+            <span id="dayBadge" class="pill dark">اليوم 1</span>
+            <h2>المتابعة اليومية</h2>
+            <p>أنجز مهامك في الجوانب الأربعة، ثم دوّن شعورك وانطباعك لهذا اليوم.</p>
+          </div>
+          <div class="today-box"><strong id="todayScore">0/20</strong><span>مهام اليوم</span></div>
+        </div>
+
+        <div id="aspectsContainer" class="aspects-container"></div>
+
+        <div class="daily-notes">
+          <div>
+            <label for="reflection">ما الشيء الذي انتصرت فيه على نفسك اليوم؟</label>
+            <textarea id="reflection" placeholder="اكتب ملاحظة قصيرة..."></textarea>
+          </div>
+          <div>
+            <label for="feeling">كيف شعرت بعد تطبيق مهام اليوم؟</label>
+            <textarea id="feeling" placeholder="شعرت أنني أكثر هدوءًا / نشاطًا / انضباطًا..."></textarea>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <button id="prevDay" class="btn outline">اليوم السابق</button>
+          <button id="nextDay" class="btn">اليوم التالي</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="final-report">
+      <div class="report-content">
+        <span class="pill gold">التقرير النهائي</span>
+        <h2>نتيجتك الحالية: <span id="scoreLabel">تحتاج إلى استمرار أقوى</span></h2>
+        <p id="encouragement"></p>
+        <label for="finalComment">تعليقك بعد تطبيق البرنامج</label>
+        <textarea id="finalComment" placeholder="اكتب كيف شعرت بعد ٢١ يومًا؟ ما أكثر جانب تطور؟ وما الجانب الذي تريد الاستمرار في تحسينه؟"></textarea>
+      </div>
+
+      <div class="certificate-panel">
+        <h3>شهادة الاجتياز</h3>
+        <p>تحصل على شهادة أنيقة باسمك بعد إكمال البرنامج. يمكنك طباعتها أو حفظها PDF.</p>
+        <button id="printCert" class="btn light full" disabled>تحميل / طباعة الشهادة</button>
+        <small id="certHint">المتطلب: إنجاز واحد على الأقل في كل يوم من أيام البرنامج + كتابة الاسم.</small>
+      </div>
+    </section>
+
+    <section id="certificate" class="certificate">
+      <div class="cert-overlay"></div>
+      <div class="cert-pattern cert-pattern-1"></div>
+      <div class="cert-pattern cert-pattern-2"></div>
+
+      <div class="certificate-inner">
+        <div class="cert-top">
+          <div class="cert-mark">✦</div>
+          <div>
+            <p class="cert-subtitle">شهادة اجتياز</p>
+            <h2>تحدي ٢١ يومًا لبناء نسخة أفضل منك</h2>
+          </div>
+          <div class="cert-mark">✦</div>
+        </div>
+
+        <p class="cert-intro">تُمنح هذه الشهادة إلى</p>
+        <div id="certName" class="cert-name">اسم المشارك</div>
+
+        <p class="cert-text">
+          تقديرًا لإتمام برنامج تطبيقي متوازن لمدة ٢١ يومًا، يجمع بين
+          النمو الروحي، والانضباط الرياضي، والتطور الفكري والثقافي،
+          والتحسن الاجتماعي، وبناء عادات يومية تصنع نسخة أفضل من الذات.
+        </p>
+
+        <div id="certMessage" class="cert-message"></div>
+        <div id="certComment" class="cert-comment"></div>
+
+        <div class="cert-overall">
+          <div class="cert-stat primary"><span>النسبة الكلية</span><strong id="certOverallPercent">0%</strong></div>
+          <div class="cert-stat primary"><span>التقييم العام</span><strong id="certScore">-</strong></div>
+          <div class="cert-stat primary"><span>تاريخ الإصدار</span><strong id="certDate">-</strong></div>
+        </div>
+
+        <div class="cert-aspect-grid">
+          <div class="cert-aspect spirit"><span>الجانب الروحي</span><strong id="certSpiritPercent">0%</strong></div>
+          <div class="cert-aspect sport"><span>الجانب الرياضي</span><strong id="certSportPercent">0%</strong></div>
+          <div class="cert-aspect mind"><span>الجانب الفكري والثقافي</span><strong id="certMindPercent">0%</strong></div>
+          <div class="cert-aspect social"><span>الجانب الاجتماعي</span><strong id="certSocialPercent">0%</strong></div>
+        </div>
+
+        <p class="cert-footer">نبارك لك إتمام هذا البرنامج، وندعوك للاستمرار والمداومة، فالعادات الصغيرة إذا ثبتت صنعت أثرًا كبيرًا في الشخصية والحياة.</p>
+        <p class="cert-dua">إن وجدت في هذا البرنامج أثرًا طيبًا، فادعُ في ظهر الغيب لصاحب الفكرة ومن ساهم في نشرها، لعل الله يجعلها صدقة جارية وأثرًا ممتدًا.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">صُممت هذه الصفحة للفائدة والنشر العام. يتم حفظ البيانات على جهاز المستخدم فقط عبر المتصفح.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
